@@ -5,5 +5,15 @@
  * @returns {number}
  */
 export default function sum(m, n) {
-    return m + n;
+
+    if (isValidNumber(m) && isValidNumber(n)) 
+        return (m + n);
+    else 
+        document.write("Проверте что у функции числовые параметры! <br/>");
+    
+    
+    function isValidNumber (num) {
+        return typeof num === 'number' && !isNaN(num);
+    }
+
 }
