@@ -4,6 +4,12 @@
  * @param {...string} fields - the properties paths to pick
  * @returns {object} - returns the new object
  */
-export const pick = (obj, ...fields) => {
-
+export function pick (obj, ...fields)  {
+    const args = Array.from(arguments).slice(1);
+    const filteredObj = Object.keys(obj)
+        .filter(key => args.includes(key))
+        .reduce((newobj, key) => {
+        newobj[key] = obj[key];
+        return newobj;
+    }, {});
 };
