@@ -10,12 +10,13 @@ export function sortStrings(arr, param = 'asc') {
     if (param === 'asc') {
          sortedArr.sort(function (a,b) {
              return collator.compare(a,b);
-         }, )
-     } else {
+         } )
+    }
+    if (param === 'desc') {
         collator.caseFirst = "lower";
         sortedArr.sort(function (a,b) {
              return collator.compare(b,a);
-         }, )
+         } )
      }
      return sortedArr;
 }
