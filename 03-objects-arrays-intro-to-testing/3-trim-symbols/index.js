@@ -25,14 +25,14 @@ export function trimSymbols(string, size) {
         }
         let ch1 = stringRest[0];
         if (stringRest.substr(0,size) === ch1.repeat(size)) {
-            resultArr.push(ch1.repeat(size)); //and go recursion
+            resultArr.push(ch1.repeat(size)); 
         } else {
             let strNotFullSize = removeAllExeptXfromCursor(ch1, stringRest.substr(0,size));
             resultArr.push(strNotFullSize); 
         }
         let editString = removeXfromString(ch1, stringRest);
         return getTemplate(editString, size);
-    }//fn getTpl
+    }
 
     function removeXfromString(xChar, sstring) {
         if (sstring === '') { 
@@ -68,6 +68,5 @@ export function trimSymbols(string, size) {
         return result;
     }
     getTemplate(string, size);
-    //-------------end------------------
     return resultArr.join('');
 }
