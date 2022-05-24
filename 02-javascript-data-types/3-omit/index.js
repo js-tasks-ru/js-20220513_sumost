@@ -5,5 +5,14 @@
  * @returns {object} - returns the new object
  */
 export const omit = (obj, ...fields) => {
-
-};
+       const filteredObj = Object.keys(obj)
+            .filter(key => !fields.includes(key))
+            .reduce((newobj, key) => {
+            newobj[key] = obj[key];
+            return newobj;
+        }, {});
+        if (filteredObj === {}) {
+           return obj;
+        }
+        return filteredObj;
+ };
